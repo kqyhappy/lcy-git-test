@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Simple example - Editor.md examples</title>
+    <link rel="stylesheet" href="/editormd/css/style.css" />
+    <link rel="stylesheet" href="/editormd/css/editormd.css" />
+    <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
+
+</head>
+<body>
+<div id="layout">
+    <header>
+        <h1>Markdown</h1>
+    </header>
+
+    </div>
+</div>
+<!-- preview的css -->
+<link rel="stylesheet" href="/editormd/css/style.css" />
+<link rel="stylesheet" href="/editormd/css/editormd.preview.css" />
+
+<!-- 引入editormd相关 -->
+<script src="/editormd/js/zepto.min.js"></script>
+
+<script src="/editormd/js/jquery.min.js"></script>
+<script src="/editormd/lib/marked.min.js"></script>
+<script src="/editormd/lib/prettify.min.js"></script>
+<script src="/editormd/lib/raphael.min.js"></script>
+<script src="/editormd/lib/underscore.min.js"></script>
+<script src="/editormd/lib/sequence-diagram.min.js"></script>
+<script src="/editormd/lib/flowchart.min.js"></script>
+<script src="/editormd/lib/jquery.flowchart.min.js"></script>
+<script src="/editormd/js/editormd.js"></script>
+
+<div id="mdView"  style="background:#eee;">
+    <textarea id="article_content" th:text="${article.articleText}"></textarea>
+</div>
+<br />
+<script type="text/javascript">
+    $(function mdToHtml() {
+        //获取要显示的内容
+
+        editormd.markdownToHTML("mdView", {
+            htmlDecode : "style,script,iframe",
+            emoji : true,
+            taskList : true,
+            tex : true, // 默认不解析
+            flowChart : true, // 默认不解析
+            sequenceDiagram : true, // 默认不解析
+        });
+    });
+</script>
+
+</body>
+
+</body>
+</html>

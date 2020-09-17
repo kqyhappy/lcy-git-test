@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mybatis.mapper.InfoMapper">
+
+    <select id="addInfo" parameterType="com.example.demo.mybatis.entity.Info">
+             INSERT b_info VALUES(null,#{postUserId},#{receiveUserId},#{type},#{articleId},#{isRead})
+       </select>
+
+
+    <select id="findInfoById" parameterType="int" resultType="com.example.demo.mybatis.entity.Info">
+             Select b_info WHERE receiveUserId=#{receiveUserId}
+       </select>
+</mapper>
